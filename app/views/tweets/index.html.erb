@@ -1,12 +1,13 @@
 <header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track': 'reload' %>
     <title>時間割表示</title>
 </header>
 
 <div class="app-header">
 <h1>オンライン自習室　時間割表示</h1>
-<button class="add-reservation-btn" onclick="　　">予定追加</button>
+<%= button_to "予定追加", tweets_new_path, method: :get , class:"add-reservation-btn" %>
 </div>
 
 <div class="learn-table-container">
@@ -20,16 +21,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>2023-11-15 10:00</td>
-            <td>2023-11-15 12:00</td>
-            <td>微分積分学</td>
-        </tr>
-        <tr>
-            <td>2023-11-16 14:00</td>
-            <td>2023-11-16 16:00</td>
-            <td>過去問解く</td>
-        </tr>
+        <% @tweets.each do |t| %>
+            <tr>
+                <td><%= t.start %></td>
+                <td><%= t.finish %></td>
+                <td><%= t.study %></td>
+            </tr>
+        <% end %>
         <!-- データ挿入 -->
     </tbody>
 </table>

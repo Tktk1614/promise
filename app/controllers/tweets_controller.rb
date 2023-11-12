@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
 
 
   def index 
-      @tweet=Tweet.all
+      @tweets=Tweet.all
   end
   
 
@@ -21,7 +21,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:start,:finish)
+    params.require(:tweet).permit(:start,:finish,:study)
   end
 
 end
