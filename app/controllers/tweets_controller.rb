@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
 
 
   def index 
-      @tweets=Tweet.all
+      @tweets=Tweet.where(user_id: current_user.id)
   end
   
 
@@ -10,8 +10,13 @@ class TweetsController < ApplicationController
       @tweet=Tweet.new
   end
 
+  def match
+    @tweets=Tweet.where(start: '2023-11-12 05:30:00 UTC')
+  end
+
   def create
       tweet=Tweet.new(tweet_params)
+      tweet.user_id = current_user.id
       if tweet.save
         redirect_to :action => "index"
       else

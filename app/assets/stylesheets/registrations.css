@@ -1,0 +1,78 @@
+@import 'bootstrap'; 
+
+.field, .actions {
+  margin-bottom: 25px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.field input[type="email"],
+.field input[type="password"],
+.field textarea {
+  width: 100%; 
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+.field input[type="email"]:focus,
+.field input[type="password"]:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.actions input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #368b47;
+}
+
+
+
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+  
+  .form-field {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%; 
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 768px) {
+    .container2 {
+      width: 90%; 
+    }
+  }
+  
+  .flexbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+
